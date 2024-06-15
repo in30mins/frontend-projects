@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="w-50 m-4">
+        <label for="file">submit your file</label>
+        <input type="file" accept="image/*" id="file" class="form-control" onchange="validateFile(event)">
+
+    </div>
+
+    <script>
+        // let allowwedtypes = ['png','gif']
+        // function validateFile(e){
+        //     let file = e.target.files[0];
+        //     console.log(file);  
+        //     let fname= file.name;
+        //     console.log(file.name);
+        //     let ext = fname.split('.')[1];
+
+        //     if(allowwedtypes.includes(ext)){
+        //         alert("valid")
+        //     }else{
+        //         alert("Invalid file format")
+        //     }
+
+        // }
+
+        function validateFile(e){
+            let file = e.target.files[0]
+            let size = file.size;
+
+            if (size<1024){
+                alert("valid")
+            }else{
+                alert("file size must be < 1 kb")
+            }
+        }
+    </script>
+    
+</body>
+</html>
